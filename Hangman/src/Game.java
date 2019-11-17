@@ -121,13 +121,17 @@ public class Game {
 		
 		boolean containsThisLetter=false; 
 		char currentLetter = userInput.charAt(0); //Convert scanner's data to char
+		int letterAppearances=0; //Letter's appearances counter
 		
 		for (int i=0; i<wordToGuessLength; i++) {
 			if (randomWordChar[i]==currentLetter) { //If word contains the input letter
 				updateWord(i, currentLetter); //Update the word to guess
 				gameStats.calcCorrectGuesses(); //+1 correct guess
 				guessedLetters.add(userInput); //Add the input letter to the ArrayList with already guessed letters
-				System.out.println("The guess is CORRECT!");
+				/*Calculate current input letter appearances in the word
+				and print a CORRECT message and number of appearances, if they are more than 1.*/
+				letterAppearances++; //Add one more appearance for the current input letter
+				calcLetterAppearances(letterAppearances, currentLetter);
 				containsThisLetter=true;
 			}
 		}
@@ -143,6 +147,18 @@ public class Game {
 		
 		wordToGuess[i]=currentLetter; //Add the letter to the word
 		
+	}
+	
+	//Print a correct message and number of letter's appearances in the word, if they are more than 1
+	private void calcLetterAppearances(int letterAppearances, char currentLetter) {
+		
+		if (letterAppearances==1) { //If letter has only one appearance in the word
+		    System.out.println("The guess is CORRECT! ");
+		}
+		else if (letterAppearances>1) { //If letter has more than one appearances in the word
+			System.out.println("The secret word contains "  + letterAppearances
+					           + " " + currentLetter + "'s.");
+		}
 	}
 	
 	//Print word's progress
