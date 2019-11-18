@@ -48,7 +48,7 @@ public class Main {
 		    		//While player has not guessed the word & has got guesses
 		    		while (notGuessed && hasGuesses) {
 		    			
-		    			//Print the number of guesses left, at the start
+		    			//Print the number of guesses left
 			    		System.out.println("You have " + gameStats.getGuesses() + " guesses left.");
 		    			//Ask player for letters
 			    		String inputLetter = nGame.askForLetter(in);
