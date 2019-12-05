@@ -12,6 +12,11 @@ public class Main {
 		SummaryStatistics sumStats = new SummaryStatistics();
 		//User's Main Menu choice(N/S/E)
 		String userChoice;
+		//Create a new Menu object
+		Menu msg = new Menu();
+		
+		//Print a greeting message on start
+		msg.printGreetingMassage();
 		
 		do {
 			//Show the Main Menu and wait for user's choice
@@ -37,7 +42,7 @@ public class Main {
 		    		//Create a new Statistics object
 		    		Statistics gameStats = new Statistics();
 		    		
-		    		//Start a new game, print a greeting message
+		    		//Start a new game, print a message
 		    		System.out.println("Let's Play!\n");
 		    		
 		    		//Print '-', equals random word's length

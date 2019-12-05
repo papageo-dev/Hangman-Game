@@ -7,14 +7,24 @@ public class Menu {
 		
 		String choice; //User's choice
 		
-		System.out.println("MAIN MENU");
+		System.out.println("\n***********************************");
+		System.out.println("             MAIN MENU             ");
+		System.out.println("***********************************");
 		System.out.println(" - Start a new Game (N)\r\n" + 
 				           " - Statistics (S)\r\n" + 
-				           " - Exit (E)\r\n");
+				           " - Exit (E)");
+		System.out.println("***********************************\n");
 		System.out.println("Please enter your choice: ");
 		
 		choice = in.nextLine();
 		return choice;
+	}
+	
+	//Print a greeting message
+	public void printGreetingMassage() {
+		System.out.println("\n***********************************");
+		System.out.println(" *** H A N G M A N - The Game! ***");
+		System.out.println("***********************************\n");
 	}
 	
 	//Print a wrong message and information
