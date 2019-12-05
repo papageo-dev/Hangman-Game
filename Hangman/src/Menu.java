@@ -29,16 +29,21 @@ public class Menu {
 	
 	//Print a wrong message and information
 	public void IllegalIndex() {
-		System.out.println("Illegal Index! "
+		System.out.println("***Illegal Index! "
 		           +"You should enter: 'N' for New Game, " 
                    +"'S' for Game's Statistics "
 	               + "or 'E' to Exit Game. "
-	               + "Please, try again!\n");
+	               + "Please, try again!***\n");
 	}
 
 	//Print a start game message
 	public void printStartGameMessage() {
 		System.out.println("\n***Let's Play!***\n");	
+	}
+
+	//Print an exit message
+	public void printExitMessage() {
+		System.out.println("***Goodbye!***");
 	}
 
 }

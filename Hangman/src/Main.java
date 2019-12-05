@@ -89,7 +89,7 @@ public class Main {
     		    
     		    //Exit game
     	       	case "E":
-    	       	    System.out.println("Goodbye!"); //Exit message
+    	       	    msg.printExitMessage(); //Print exit message
     	       	    in.close(); //Close scanner(in)
     	       	    System.exit(1); //Close game
     	       	break;
