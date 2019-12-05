@@ -42,8 +42,8 @@ public class Main {
 		    		//Create a new Statistics object
 		    		Statistics gameStats = new Statistics();
 		    		
-		    		//Start a new game, print a message
-		    		System.out.println("Let's Play!\n");
+		    		//Start a new game, print a start game message
+		    		msg.printStartGameMessage();
 		    		
 		    		//Print '-', equals random word's length
 		    		nGame.printWordPavlas();

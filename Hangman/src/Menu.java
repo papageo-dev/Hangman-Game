@@ -36,4 +36,9 @@ public class Menu {
 	               + "Please, try again!\n");
 	}
 
+	//Print a start game message
+	public void printStartGameMessage() {
+		System.out.println("\n***Let's Play!***\n");	
+	}
+
 }
