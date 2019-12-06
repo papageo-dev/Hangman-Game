@@ -89,9 +89,8 @@ public class Main {
     		    
     		    //Exit game
     	       	case "E":
-    	       	    msg.printExitMessage(); //Print exit message
-    	       	    in.close(); //Close scanner(in)
-    	       	    System.exit(1); //Close game
+    	       		//Ask player if wants to exit game and print message depending on player's answer
+    	       		mainMenu.askForExit(in);
     	       	break;
     	       	
     	       	//When userChoice!=N/S/E
@@ -102,4 +101,5 @@ public class Main {
 	    	 }
    		}while (userChoice!="E");
 	}
+
 }

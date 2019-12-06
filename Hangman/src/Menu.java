@@ -40,10 +40,39 @@ public class Menu {
 	public void printStartGameMessage() {
 		System.out.println("\n***Let's Play!***\n");	
 	}
+	
+	//Check if player wants to exit game, print messages and call current functions
+	public void askForExit(Scanner in) {
+		
+		char answer; //Player's answer
+		
+		do {
+			System.out.println("Exit game?(Y/N)"); //Ask player
+			answer=in.next().toUpperCase().charAt(0); //Get player's answer
+			
+			//Check player's answer
+			if (answer=='Y') { //If player wants to exit
+				printExitMessage(); //Print exit message
+		   	    in.close(); //Close scanner(in)
+		   	    System.exit(1); //Close game
+			}
+			else if (answer=='N'){ //If player don't wants to exit
+				in.nextLine();
+			}
+			else { //If player any other character/number/symbol
+				printWrongAnswerMessage();
+			}
+		} while(answer!='Y' && answer!='N');
+	}
 
 	//Print an exit message
-	public void printExitMessage() {
-		System.out.println("***Goodbye!***");
+	private void printExitMessage() {
+		System.out.println("***Goodbye! See you soon!***");
+	}
+	
+	//Print a wrong answer message
+	private void printWrongAnswerMessage() {
+		System.out.println("***Please, enter 'Y' if you want to exit game of 'N' if you want to play more.***\n");
 	}
 
 }
