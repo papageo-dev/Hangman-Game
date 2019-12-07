@@ -173,12 +173,17 @@ public class Game {
 	}
 	
 	//Check if player has more guesses
-	public boolean hasGuesses(Statistics gameStats) {
+	public boolean hasGuesses(Statistics gameStats, ConsoleGraphics hangGraphs, String randomWord) {
 		
 		boolean hasGuesses=true;
 		
-		if (gameStats.getGuesses()==0) {
+		if (gameStats.getGuesses()==0) { //If player is out of guesses
+			//Print a game over message
 	    	System.out.println("***GAME OVER***\nYou are out of guesses... Try again!\n");
+	    	//Print hangman's graphic progress
+	    	hangGraphs.printHangman(gameStats.getGuesses());
+	    	//Print the full word
+	    	printFullWord(randomWord);
 	    	//Print game's statistics
 	    	gameStats.printGameStats();
 	    	hasGuesses=false;
@@ -199,6 +204,11 @@ public class Game {
 			found=true;
 		}
 		return found;
+	}
+	
+	//Print the full word
+	private void printFullWord(String randomWord){
+		System.out.println("The secret word was: " + randomWord + "\n");
 	}
 	
 	//Print Congratulation message, the full word and game's statistics
