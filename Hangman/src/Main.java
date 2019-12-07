@@ -58,10 +58,8 @@ public class Main {
 		    			
 		    			//Print the number of guesses left
 			    		System.out.println("You have " + gameStats.getGuesses() + " guesses left.");
-			    		
 			    		//Print Hangman's graphic progress
 			    		hangGraphs.printHangman(gameStats.getGuesses());
-			    		
 		    			//Ask player for letters
 			    		String inputLetter = nGame.askForLetter(in);
 		    			//Check if random word contains the current input letter and update game statistics

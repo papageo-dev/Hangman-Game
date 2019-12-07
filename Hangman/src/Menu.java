@@ -23,7 +23,7 @@ public class Menu {
 	//Print a greeting message
 	public void printGreetingMassage() {
 		System.out.println("\n***********************************");
-		System.out.println(" *** H A N G M A N - The Game! ***");
+		System.out.println(" *** H A N G M A N - THE GAME! ***");
 		System.out.println("***********************************\n");
 	}
 	

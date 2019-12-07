@@ -215,7 +215,7 @@ public class Game {
 	public void printFullWordAndStats(String randomWord, Statistics gameStats) {
 		
 		//Print a Congratulations message and the complete word
-		System.out.println("Congratulations! You guessed the word: " + randomWord + "\n");
+		System.out.println("***Congratulations!***\nYou guessed the word: " + randomWord + "\n");
     	//Print game's statistics
     	gameStats.printGameStats();
 	}

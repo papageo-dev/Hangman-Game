@@ -66,7 +66,6 @@ public class ConsoleGraphics {
 		    break;
 		
 		    case 3:
-		    	System.out.println("Wrong guess, try again");
 				System.out.println("   ____________    ");
 				System.out.println("   |          _|_  ");
 				System.out.println("   |         /   \\");
