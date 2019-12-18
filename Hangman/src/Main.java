@@ -66,6 +66,7 @@ public class Main {
 		    		    nGame.checkInputLetter(inputLetter, gameStats);
 		    			//Print word's progress
 		    		    nGame.printWordProgress();
+		    		    
 		    		    //Check if player has more guesses
 		    		    if (!nGame.hasGuesses(gameStats, hangGraphs, randomWord)) {
 		    		    	//Add one more game
@@ -74,6 +75,7 @@ public class Main {
 		    		    	sumStats.calcSumLoses();
 		    		    	hasGuesses=false;
 		    		    }
+		    		    
 		    		    //Check if player found the word
 		    		    if (nGame.wordFound(randomWord)) {
 		    		    	//Print a congratulation message, the full word, and the game statistics
