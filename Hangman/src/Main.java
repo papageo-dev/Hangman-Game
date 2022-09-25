@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -29,15 +28,11 @@ public class Main {
 		        	//Create a new Dictionary object
 		    		Dictionary words = new Dictionary();
 		    		
-		    		//Generating a random integer number(0-100)
-		    		Random randomN = new Random();
-		    		int n = randomN.nextInt(100)+1;
-		    		
 		        	//Get a random word from class "Dictionary", with method "getWord"
-		    		String randomWord = words.getWord(n);
+		    		String randomWordToGuess = words.getWord();
 		    		
 	    			//Create a new Game object
-		    		Game nGame = new Game(randomWord);
+		    		Game nGame = new Game(randomWordToGuess);
 
 		    		//Create a new Statistics object
 		    		Statistics gameStats = new Statistics();
@@ -68,7 +63,7 @@ public class Main {
 		    		    nGame.printWordProgress();
 		    		    
 		    		    //Check if player has more guesses
-		    		    if (!nGame.hasGuesses(gameStats, hangGraphs, randomWord)) {
+		    		    if (!nGame.hasGuesses(gameStats, hangGraphs, randomWordToGuess)) {
 		    		    	//Add one more game
 		    		    	sumStats.calcSumGames();
 		    		    	//Add one more lose
@@ -77,9 +72,9 @@ public class Main {
 		    		    }
 		    		    
 		    		    //Check if player found the word
-		    		    if (nGame.wordFound(randomWord)) {
+		    		    if (nGame.wordFound(randomWordToGuess)) {
 		    		    	//Print a congratulation message, the full word, and the game statistics
-		    		    	nGame.printFullWordAndStats(randomWord, gameStats);
+		    		    	nGame.printFullWordAndStats(randomWordToGuess, gameStats);
 		    		    	//Add one more game
 		    		    	sumStats.calcSumGames();
 		    		    	//Add one more win

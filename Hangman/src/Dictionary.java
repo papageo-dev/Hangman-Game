@@ -1,9 +1,56 @@
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.Random;
 
-// A Dictionary with 100 words
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+// A Dictionary with more than 1000000 words
 public class Dictionary {
 	
+	public String getWord() {
+		
+		// Initialize the returned String variable
+		String secretWord = " ";
+		
+		// Connect to API and use "GET" method
+		HttpRequest request = HttpRequest.newBuilder()
+				.uri(URI.create("https://random-words-api.vercel.app/word"))
+				.method("GET", HttpRequest.BodyPublishers.noBody())
+				.build();
+		HttpResponse<String> response;
+		
+		// Parse and handle API's JSON response and return the secret word as String
+		try {
+			response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+			JSONArray jsonArray = new JSONArray(response.body());
+	        for (int i =0; i<jsonArray.length(); i++) {
+	            if (jsonArray.get(i) instanceof JSONObject) {
+	                JSONObject jsonObj = (JSONObject)jsonArray.get(i);
+	                String word = (String)jsonObj.get("word");
+	                secretWord = word.toUpperCase();
+	            }
+	        }
+	        // If can't connect or exception, return a random secret word from a local dictionary with 100 words
+		} catch (IOException | InterruptedException e) {
+
+			//e.printStackTrace();
+			
+    		//Generating a random integer number(0-100)
+    		Random randomN = new Random();
+    		int n = randomN.nextInt(100)+1;
+    		//Get a random word from the offline dictionary
+			secretWord = getWordOffline(n);
+		}
+		return secretWord.toUpperCase();
+		
+	}
+	
 	//"getWord" method returns a word, by "index" number(0-100)
-	public String getWord(int index) {
+	public String getWordOffline(int index) {
 		switch (index) {
 		        case 0: return "UNIVERSITY";
 		        case 1: return "COMPUTER";
