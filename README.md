@@ -15,8 +15,8 @@ The program has a main menu, with the following options:
 
 # The Game
 
-- Choosing a random "secret" word(in English). The word will be selected from a list of words in class "Dictionary",                     
-  with method "getWord()".                                                                                                                 
+- Choosing a random "secret" word(in English). The word will be selected in class "Dictionary", with method "getWord()" that connects to 
+  the [Random Words API](https://github.com/mcnaveen/Random-Words-API) and returns a random word.
 - Basic structure of game: the user is prompted to select a letter, measure the number of remaining attempts,
   print messages, print graphic progress, detect the end of the game, etc.).                                                          
 - Tracking the word progress, user is gradually guessing.                                                                       
@@ -26,5 +26,3 @@ The program has a main menu, with the following options:
 - If the user tries to re-enter a letter or enter a letter that is already guessed, the program will display an appropriate message
   and a new letter will be requested.                                                                                                  
 - At the end of each round display a message of success or failure as well as the number of correct and wrong predictions of player.     
-
-
